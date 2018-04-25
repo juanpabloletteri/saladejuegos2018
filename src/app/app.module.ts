@@ -10,6 +10,7 @@ import { AdivinaElNumeroComponent } from './componentes/adivina-el-numero/adivin
 import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/piedra-papel-tijera.component';
 import { Juego3Component } from './componentes/juego3/juego3.component';
 import { ErrorComponent } from './componentes/error/error.component';
+import { LoginComponent } from './componentes/login/login.component';
 
 const config: Routes = [
   {
@@ -37,7 +38,8 @@ const config: Routes = [
     AdivinaElNumeroComponent,
     PiedraPapelTijeraComponent,
     Juego3Component,
-    ErrorComponent
+    ErrorComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,17 @@
-<div class="topnav">
+<app-login *ngIf="!logueado"></app-login>
+
+<div *ngIf="logueado" class="topnav">
   <a class="active" routerLink="">Home</a>
   <a routerLink="adivina">Adivina el numero</a>
   <a routerLink="ppt">Piedra Papel o Tijera</a>
   <a routerLink="juego3">Juego 3</a>
   <div class="topnav-right">
-    <a href="#search">Search</a>
-    <a href="#about">About</a>
+    <a href="#search">Puntajes</a>
+    <a href="#" (click)="Salir()">Salir</a>
   </div>
 </div>
 
-<router-outlet></router-outlet>
+<router-outlet *ngIf="logueado"></router-outlet>
 <!--The content below is only a placeholder and can be replaced
 <div style="text-align:center">
   <h1>
