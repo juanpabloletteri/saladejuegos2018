@@ -16,6 +16,10 @@ import { LoginComponent } from './componentes/login/login.component';
 
 const config: Routes = [
   {
+    path: '',
+    component: LoginComponent
+  },
+  {
     path: 'adivina',
     component: AdivinaElNumeroComponent
   },

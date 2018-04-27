@@ -8,15 +8,9 @@ import { HttpServiceService } from '../../servicios/http-service.service';
 })
 export class LoginComponent implements OnInit {
 
-  api = 'http://localhost/api/'
+  constructor(public miHttp: HttpServiceService) {
 
-  constructor(public miHttp: HttpServiceService) { }
-
-  ngOnInit() {
-  }
-
-  public TraerUsuarios(ruta) {
-    return this.miHttp.httpGetO(this.api + ruta)
+    this.miHttp.httpGetO('http://localhost/api/traerMailsyApodos')
       .toPromise()
       .then(data => {
         console.log(data);
@@ -25,8 +19,12 @@ export class LoginComponent implements OnInit {
       }, err => {
         console.log(err);
       })
+  }
 
+  ngOnInit() {
+  }
 
+  Ingresar() {
 
   }
 }
