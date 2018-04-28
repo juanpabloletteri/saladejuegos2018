@@ -8,14 +8,17 @@ import { HttpServiceService } from '../../servicios/http-service.service';
 })
 export class LoginComponent implements OnInit {
 
+  usuarios: any;
+
   constructor(public miHttp: HttpServiceService) {
 
     this.miHttp.httpGetO('http://localhost/api/traerMailsyApodos')
       .toPromise()
       .then(data => {
         console.log(data);
+        this.usuarios = data;
         // console.log( data );
-        return data;
+        //return data;
       }, err => {
         console.log(err);
       })
@@ -25,6 +28,8 @@ export class LoginComponent implements OnInit {
   }
 
   Ingresar() {
-
+    this.usuarios.forEach(element => {
+      console.log('ele mailll' + element.mail + 'ele apodo: ' + element.apodoJugador)
+    });
   }
 }
