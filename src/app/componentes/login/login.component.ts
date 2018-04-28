@@ -9,10 +9,11 @@ import { HttpServiceService } from '../../servicios/http-service.service';
 export class LoginComponent implements OnInit {
 
   usuarios: any;
-
+  mail: string;
+  pass: string;
   constructor(public miHttp: HttpServiceService) {
 
-    this.miHttp.httpGetO('http://localhost/api/traerMailsyApodos')
+    this.miHttp.httpGetO('http://localhost/api/traerMailsyPass')
       .toPromise()
       .then(data => {
         console.log(data);
@@ -29,7 +30,16 @@ export class LoginComponent implements OnInit {
 
   Ingresar() {
     this.usuarios.forEach(element => {
-      console.log('ele mailll' + element.mail + 'ele apodo: ' + element.apodoJugador)
+      console.log('mail' + this.mail + '  pass: ' + this.pass);
+      //console.log('ele mailll' + element.mail + 'ele apodo: ' + element.apodoJugador)
+      if (this.mail == element.mail && this.pass == element.password) {
+        alert("seeeeee")
+      } else if (this.mail == element.mail) {
+        alert("password incorrecto")
+      } else if (this.pass == element.password) {
+        alert("mail incorrecto")
+      }
     });
+
   }
 }

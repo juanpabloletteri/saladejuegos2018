@@ -1,4 +1,25 @@
 <p>
   login works!
 </p>
-<button (click)="Ingresar()" >Ingresar</button>
+
+
+
+<h3>Mail</h3>
+<span class="ui-float-label">
+    <input id="float-input" type="text" size="30" pInputText [(ngModel)]="mail"> 
+    <label for="float-input">Mail</label>
+</span>
+
+<h3>Ingrese Password</h3>
+<div class="ui-inputgroup">
+  <span class="ui-inputgroup-addon">
+    <i class="fa fa-user"></i>
+  </span>
+  <input type="password" pPassword [(ngModel)]="pass" promptLabel="Ingresa pass"/>
+</div>
+
+<br>
+
+<p-button (onClick)="Ingresar()" icon="fa fa-fw fa-check" label="Ingresar"></p-button>
+
+
