@@ -5,14 +5,9 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpServiceService } from './servicios/http-service.service';
-///////////////////prime ng
-import { AccordionModule } from 'primeng/accordion';     //accordion and accordion tab
-import { MenuItem } from 'primeng/api';                 //api
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { InputTextModule } from 'primeng/inputtext';
-import { PasswordModule } from 'primeng/password';
-import { ButtonModule } from 'primeng/button';
-//////////////////
+
+import { PrimengModule } from './modulos/primeng/primeng.module'
+
 import { AppComponent } from './app.component';
 
 import { RouterModule, Route, Routes } from '@angular/router';
@@ -59,10 +54,7 @@ const config: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    BrowserAnimationsModule,
-    InputTextModule,
-    PasswordModule,
-    ButtonModule,
+    PrimengModule,
     RouterModule.forRoot(config)
   ],
   providers: [HttpServiceService],
