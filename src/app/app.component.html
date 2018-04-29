@@ -9,7 +9,7 @@
 
 <router-outlet *ngIf="logueado"></router-outlet>
 
-<p-carousel headerText="Juegos" [value]="juegos" circular="!true" autoplayInterval="6000">
+<p-carousel headerText="Juegos" [value]="juegos"> <!-- circular="!true" autoplayInterval="6000"> -->
   <ng-template let-juego pTemplate="item">
     <div class="ui-grid ui-grid-responsive">
       <div class="ui-grid-row">
