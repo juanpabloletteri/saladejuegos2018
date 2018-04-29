@@ -17,6 +17,8 @@ import { Juego3Component } from './componentes/juego3/juego3.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { HomeComponent } from './componentes/home/home.component';
+import { PuntajeComponent } from './componentes/puntaje/puntaje.component';
+import { AcercadeComponent } from './componentes/acercade/acercade.component';
 
 const config: Routes = [
   {
@@ -40,6 +42,14 @@ const config: Routes = [
     component: Juego3Component
   },
   {
+    path: 'puntaje',
+    component: PuntajeComponent
+  },
+  {
+    path: 'acercade',
+    component: AcercadeComponent
+  },
+  {
     path: '**',
     component: ErrorComponent
   }
@@ -54,7 +64,9 @@ const config: Routes = [
     Juego3Component,
     ErrorComponent,
     LoginComponent,
-    HomeComponent
+    HomeComponent,
+    PuntajeComponent,
+    AcercadeComponent
   ],
   imports: [
     BrowserModule,
