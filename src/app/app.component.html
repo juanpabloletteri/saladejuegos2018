@@ -2,22 +2,18 @@
 
 <div *ngIf="logueado" class="topnav">
   <a class="active" routerLink="">Home</a>
-  <a routerLink="adivina">Adivina el numero</a>
-  <a routerLink="ppt">Piedra Papel o Tijera</a>
-  <a routerLink="juego3">Juego 3</a>
   <div class="topnav-right">
-    <a href="#search">Puntajes</a>
     <a href="#" (click)="Salir()">Salir</a>
   </div>
 </div>
 
 <router-outlet *ngIf="logueado"></router-outlet>
 
-<p-carousel headerText="Juegos" [value]="juegos" circular="!true" autoplayInterval="3000">
+<p-carousel headerText="Juegos" [value]="juegos" circular="!true" autoplayInterval="6000">
   <ng-template let-juego pTemplate="item">
     <div class="ui-grid ui-grid-responsive">
       <div class="ui-grid-row">
-        <div class="ui-grid-col-12">
+        <div class="ui-grid-col-6">
           <br>
           <a routerLink="{{juego.link}}">
             <img src="../assets/juegos/{{juego.imagen}}.jpg" width="260" height="250">
@@ -28,5 +24,3 @@
     </div>
   </ng-template>
 </p-carousel>
-
-<!-- <img src="assets/531.jpg" width="260" height="250"> -->
