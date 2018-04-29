@@ -1,0 +1,30 @@
+import { Component, OnInit } from '@angular/core';
+
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.css']
+})
+export class HomeComponent implements OnInit {
+
+  logueado: boolean = true;
+  juegos: Object[];
+
+  constructor() {
+    this.juegos = [
+      { nombre: 'Adivina el numero', imagen: 'adivina', link: 'adivina', color: 'Black' },
+      { nombre: 'Piedra Papel Tijera', imagen: 'ppt', link: 'ppt', color: 'White' },
+      { nombre: 'Juego 3', imagen: 'juego3', link: 'juego3', color: 'Blue' },
+      { nombre: 'Puntaje', imagen: 'puntaje', link: 'puntaje', color: 'Blue' },
+      { nombre: 'Acerca de', imagen: 'acercade', link: 'acercade', color: 'Blue' }
+    ];
+  }
+
+  Salir() {
+    this.logueado = false;
+  }
+
+  ngOnInit() {
+  }
+
+}

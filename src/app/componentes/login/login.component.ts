@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpServiceService } from '../../servicios/http-service.service';
+import { RouterModule, Route, Routes, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,7 @@ export class LoginComponent implements OnInit {
   usuarios: any;
   mail: string;
   pass: string;
-  constructor(public miHttp: HttpServiceService) {
+  constructor(public miHttp: HttpServiceService, public rute:Router) {
 
     this.miHttp.httpGetO('http://localhost/api/traerMailsyPass')
       .toPromise()
@@ -33,7 +34,8 @@ export class LoginComponent implements OnInit {
       console.log('mail' + this.mail + '  pass: ' + this.pass);
       //console.log('ele mailll' + element.mail + 'ele apodo: ' + element.apodoJugador)
       if (this.mail == element.mail && this.pass == element.password) {
-        alert("seeeeee")
+        alert("seeeeee");
+        this.rute.navigate(['home']);
       } else if (this.mail == element.mail) {
         alert("password incorrecto")
       } else if (this.pass == element.password) {

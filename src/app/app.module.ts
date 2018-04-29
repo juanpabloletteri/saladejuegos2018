@@ -16,11 +16,16 @@ import { PiedraPapelTijeraComponent } from './componentes/piedra-papel-tijera/pi
 import { Juego3Component } from './componentes/juego3/juego3.component';
 import { ErrorComponent } from './componentes/error/error.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { HomeComponent } from './componentes/home/home.component';
 
 const config: Routes = [
   {
-    path: 'login',
+    path: '',
     component: LoginComponent
+  },
+  {
+    path: 'home',
+    component: HomeComponent,
   },
   {
     path: 'adivina',
@@ -48,7 +53,8 @@ const config: Routes = [
     PiedraPapelTijeraComponent,
     Juego3Component,
     ErrorComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
