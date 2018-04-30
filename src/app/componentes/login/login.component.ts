@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   pass: string;
   jugador: JugadorService = new JugadorService();
 
+  esUsuario: boolean = true;
+
   constructor(public miHttp: HttpServiceService, public rute: Router, public nuevoHttp: Http) {
 
     this.miHttp.httpGetO('http://localhost/api/traerTodosLosUsuarios')

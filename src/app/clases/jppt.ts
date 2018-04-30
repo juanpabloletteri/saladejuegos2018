@@ -37,9 +37,13 @@ export class JuegoPPT {
         else if (eleccionJugador == 1 && this.eleccionMaquina == 2 || eleccionJugador == 2 && this.eleccionMaquina == 3 || eleccionJugador == 3 && this.eleccionMaquina == 1) {
             return 'perdio';
         }
-        else if (eleccionJugador == 1 && this.eleccionMaquina == 3 || eleccionJugador == 2 && this.eleccionMaquina == 1 || eleccionJugador == 3 && this.eleccionMaquina == 2) {
+        else{
             return 'gano';
         }
+        /*
+        else if (eleccionJugador == 1 && this.eleccionMaquina == 3 || eleccionJugador == 2 && this.eleccionMaquina == 1 || eleccionJugador == 3 && this.eleccionMaquina == 2) {
+            return 'gano';
+        }*/
 
 
     }
