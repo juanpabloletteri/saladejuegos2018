@@ -1,4 +1,33 @@
 <p>
   puntaje works!
 </p>
-{{puntos1}}
+
+<table class="tg">
+  <tr>
+    <th class="tg-yw4l" colspan="4">Resumen puntajes {{apodoJugador}} </th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Juego</td>
+    <td class="tg-yw4l">Adivina</td>
+    <td class="tg-yw4l">PPT</td>
+    <td class="tg-yw4l">Juego3</td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Puntaje Base</td>
+    <td class="tg-yw4l"> {{puntos1Base}} </td>
+    <td class="tg-yw4l"> {{puntos2Base}} </td>
+    <td class="tg-yw4l"> {{puntos2Base}} </td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">Puntajes de hoy</td>
+    <td class="tg-yw4l"> {{puntos1Sesion}} </td>
+    <td class="tg-yw4l"> {{puntos1Sesion}} </td>
+    <td class="tg-yw4l"> {{puntos1Sesion}} </td>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">TOTAL</td>
+    <td class="tg-yw4l"> {{puntos1Base+puntos1Sesion}} </td>
+    <td class="tg-yw4l">{{puntos2Base+puntos2Sesion}} </td>
+    <td class="tg-yw4l">{{puntos3Base+puntos3Sesion}} </td>
+  </tr>
+</table>

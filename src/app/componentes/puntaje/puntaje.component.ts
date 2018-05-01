@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { JugadorService } from '../../servicios/jugador.service';
-import { Jugador } from '../../clases/jugador';
 
 @Component({
   selector: 'app-puntaje',
@@ -9,18 +8,27 @@ import { Jugador } from '../../clases/jugador';
 })
 export class PuntajeComponent implements OnInit {
 
+  apodoJugador: string;
 
-  puntos1: number;
-  puntos2: number;
+  puntos1Base: number;
+  puntos2Base: number;
+  puntos3Base: number;
+
+  puntos1Sesion: number;
+  puntos2Sesion: number;
+  puntos3Sesion: number;
 
   constructor(private jugadorS: JugadorService) {
-
   }
 
   ngOnInit() {
-    console.log('puntos 2:' + this.jugadorS.getPuntos2Base())
-    console.log(this.jugadorS.getPuntos1Base());
-    this.puntos1 = this.jugadorS.getPuntos1Base();
+    this.apodoJugador = this.jugadorS.getApodoJugador();
+    this.puntos1Base = this.jugadorS.getPuntos1Base();
+    this.puntos2Base = this.jugadorS.getPuntos2Base();
+    this.puntos3Base = this.jugadorS.getPuntos3Base();
+    this.puntos1Sesion = this.jugadorS.getPuntos1Sesion();
+    this.puntos2Sesion = this.jugadorS.getPuntos2Sesion();
+    this.puntos3Sesion = this.jugadorS.getPuntos3Sesion();
   }
 
 }

@@ -6,11 +6,11 @@ export class Jugador {
     mail: string;
     apodoJugador: string;
     puntos1base: number;
-    puntos1sesion: number;
+    puntos1sesion: number = 0;
     puntos2base: number;
-    puntos2sesion: number;
+    puntos2sesion: number = 0;
     puntos3base: number;
-    puntos3sesion: number;
+    puntos3sesion: number = 0;
 
     constructor() { }
 
