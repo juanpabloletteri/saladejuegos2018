@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 //import { JuegoPPT } from '../../clases/jppt';
+import { Message } from 'primeng/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -9,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 export class PiedraPapelTijeraComponent implements OnInit {
 
   //juegoDelComponente: JuegoPPT = new JuegoPPT();
+  msgs: Message[] = [];
 
   eleccionMaquina: number = 0;
   //1 piedra 2 papel 3 tijeras
@@ -19,7 +22,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   empatadas: number = 0;
   puntaje: number = 0;
 
-  constructor() {
+  constructor(private messageService: MessageService) {
     //this.juegoDelComponente.generarEleccion();
     this.generarEleccion();
   }
@@ -50,23 +53,29 @@ export class PiedraPapelTijeraComponent implements OnInit {
     ////////////////////////////
     this.jugadas++;
     if (eleccionJugador == this.eleccionMaquina) {
+      this.msgs = [];
+      this.msgs.push({ severity: 'info', summary: 'Empato', detail: 'No acumula puntaje' });
       this.empatadas++;
       this.generarEleccion();
       return 'empate';
     }
     else if (eleccionJugador == 1 && this.eleccionMaquina == 2 || eleccionJugador == 2 && this.eleccionMaquina == 3 || eleccionJugador == 3 && this.eleccionMaquina == 1) {
+      this.msgs = [];
+      this.msgs.push({ severity: 'error', summary: 'Perdio', detail: 'Resta un punto' });
       this.perdidas++;
-      this.puntaje --;
+      this.puntaje--;
       this.generarEleccion();
       return 'perdio';
     }
     else {
+      this.msgs = [];
+      this.msgs.push({ severity: 'success', summary: 'Gano!!', detail: 'Felicidades, suma 1 punto' });
       this.ganadas++;
-      this.puntaje ++;
+      this.puntaje++;
       this.generarEleccion();
       return 'gano';
     }
-    
+
     /*
     else if (eleccionJugador == 1 && this.eleccionMaquina == 3 || eleccionJugador == 2 && this.eleccionMaquina == 1 || eleccionJugador == 3 && this.eleccionMaquina == 2) {
         return 'gano';

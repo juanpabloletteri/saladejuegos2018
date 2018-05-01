@@ -10,6 +10,9 @@ import { PasswordModule } from 'primeng/password';
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
 import { InputSwitchModule } from 'primeng/inputswitch';
+import { GrowlModule } from 'primeng/growl';
+import { Message } from 'primeng/api';
+import { MessageService } from 'primeng/components/common/messageservice';
 //////////////////
 @NgModule({
   imports: [
@@ -19,7 +22,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     PasswordModule,
     ButtonModule,
     CarouselModule,
-    InputSwitchModule
+    InputSwitchModule,
+    GrowlModule
   ],
   exports: [
     CommonModule,
@@ -28,7 +32,11 @@ import { InputSwitchModule } from 'primeng/inputswitch';
     PasswordModule,
     ButtonModule,
     CarouselModule,
-    InputSwitchModule
+    InputSwitchModule,
+    GrowlModule
+  ],
+  providers: [
+    MessageService
   ],
   declarations: []
 })

@@ -1,19 +1,20 @@
 <p>
   piedra-papel-tijera works!
 </p>
+<p-growl [(value)]="msgs"></p-growl>
+<div>
+  <a (click)="apostar(1)">
+    <img src="../assets/ppt/piedra.gif" width="260" height="250">
+  </a>
 
+  <a (click)="apostar(2)">
+    <img src="../assets/ppt/papel.gif" width="260" height="250">
+  </a>
 
-<a (click)="apostar(1)">
-  <img src="../assets/ppt/piedra.gif" width="260" height="250">
-</a>
-
-<a (click)="apostar(2)">
-  <img src="../assets/ppt/papel.gif" width="260" height="250">
-</a>
-
-<a (click)="apostar(3)">
-  <img src="../assets/ppt/tijera.gif" width="260" height="250">
-</a>
+  <a (click)="apostar(3)">
+    <img src="../assets/ppt/tijera.gif" width="260" height="250">
+  </a>
+</div>
 
 <table class="tg">
   <tr>
