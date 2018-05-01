@@ -14,11 +14,12 @@ export class LoginComponent implements OnInit {
   usuarios: any;
   mail: string;
   pass: string;
-  jugador: JugadorService = new JugadorService();
+  //jugador: JugadorService = new JugadorService();
 
   esUsuario: boolean = true;
 
-  constructor(public miHttp: HttpServiceService, public rute: Router, public nuevoHttp: Http) {
+  constructor(public miHttp: HttpServiceService, public rute: Router, 
+    public nuevoHttp: Http, private jugador:JugadorService) {
 
     this.miHttp.httpGetO('http://localhost/api/traerTodosLosUsuarios')
       .toPromise()
@@ -50,9 +51,9 @@ export class LoginComponent implements OnInit {
         this.jugador.setApellido(element.apellido);
         this.jugador.setMail(element.mail);
         this.jugador.setApodoJugador(element.apodoJugador);
-        this.jugador.setPuntosBase1(element.puntos1base);
-        this.jugador.setPuntosBase2(element.puntos2baseid);
-        this.jugador.setPuntosBase3(element.puntos3base);
+        this.jugador.setPuntos1Base(element.puntos1);
+        this.jugador.setPuntos2Base(element.puntos2);
+        this.jugador.setPuntos3Base(element.puntos3);
         /////////////
         this.rute.navigate(['home']);
       } else if (this.mail == element.mail) {

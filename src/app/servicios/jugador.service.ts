@@ -1,48 +1,78 @@
 import { Injectable } from '@angular/core';
+import { Jugador } from '../clases/jugador';
 
 @Injectable()
 export class JugadorService {
 
-  id: number;
-  nombre: string;
-  apellido: string;
-  mail: string;
-  apodoJugador: string;
-  puntos1base: number;
-  puntos1sesion: number;
-  puntos2base: number;
-  puntos2sesion: number;
-  puntos3base: number;
-  puntos3sesion: number;
+  //jugador: Jugador = new Jugador();
 
-  constructor() { }
+  constructor(private jugador:Jugador) { }
 
-  setId(id){
-    this.id = id;
+  setId(id) {
+    this.jugador.id = id;
   }
-  setNombre(nombre){
-    this.nombre = nombre;
+  setNombre(nombre) {
+    this.jugador.nombre = nombre;
   }
-  setApellido(apellido){
-    this.apellido = apellido;
+  setApellido(apellido) {
+    this.jugador.apellido = apellido;
   }
-  setMail(mail){
-    this.mail = mail;
+  setMail(mail) {
+    this.jugador.mail = mail;
   }
-  setApodoJugador(apodoJugador){
-    this.apodoJugador = apodoJugador;
+  setApodoJugador(apodoJugador) {
+    this.jugador.apodoJugador = apodoJugador;
   }
-  setPuntosBase1(puntos1base){
-    this.puntos1base = puntos1base;
+  setPuntos1Base(puntos) {
+    this.jugador.puntos1base = puntos;
   }
-  setPuntosBase2(puntos2base){
-    this.puntos2base = puntos2base;
+  setPuntos1Sesion(puntos) {
+    this.jugador.puntos1sesion = puntos;
   }
-  setPuntosBase3(puntos3base){
-    this.puntos3base = puntos3base;
+  setPuntos2Base(puntos) {
+    this.jugador.puntos2base = puntos;
+  }
+  setPuntos2Sesion(puntos) {
+    this.jugador.puntos2sesion = puntos;
+  }
+  setPuntos3Base(puntos) {
+    this.jugador.puntos3base = puntos;
+  }
+  setPuntos3Sesion(puntos) {
+    this.jugador.puntos3sesion = puntos;
   }
   /////////////////////////
-  getApodoJugador(){
-    return this.apodoJugador;
+  getId() {
+    return this.jugador.id;
+  }
+  getNombre() {
+    return this.jugador.nombre;
+  }
+  getApellido() {
+    return this.jugador.apellido;
+  }
+  getMail() {
+    return this.jugador.mail;
+  }
+  getApodoJugador() {
+    return this.jugador.apodoJugador;
+  }
+  getPuntos1Base() {
+    return this.jugador.puntos1base;
+  }
+  getPuntos1Sesion() {
+    return this.jugador.puntos1sesion;
+  }
+  getPuntos2Base() {
+    return this.jugador.puntos2base;
+  }
+  getPuntos2Sesion() {
+    return this.jugador.puntos2sesion;
+  }
+  getPuntos3Base() {
+    return this.jugador.puntos3base;
+  }
+  getPuntos3Sesion() {
+    return this.jugador.puntos3sesion;
   }
 }

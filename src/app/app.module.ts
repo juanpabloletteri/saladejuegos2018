@@ -5,6 +5,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpServiceService } from './servicios/http-service.service';
+import { JugadorService } from './servicios/jugador.service';
+import { Jugador } from './clases/jugador';
 
 import { PrimengModule } from './modulos/primeng/primeng.module'
 
@@ -75,7 +77,7 @@ const config: Routes = [
     PrimengModule,
     RouterModule.forRoot(config)
   ],
-  providers: [HttpServiceService],
+  providers: [HttpServiceService, JugadorService, Jugador],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
