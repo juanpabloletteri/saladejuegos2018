@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 //import { JuegoPPT } from '../../clases/jppt';
 import { Message } from 'primeng/api';
 import { MessageService } from 'primeng/components/common/messageservice';
+import { JugadorService } from '../../servicios/jugador.service';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -22,7 +23,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
   empatadas: number = 0;
   puntaje: number = 0;
 
-  constructor(private messageService: MessageService) {
+  constructor(private messageService: MessageService, private jugadorS: JugadorService) {
     //this.juegoDelComponente.generarEleccion();
     this.generarEleccion();
   }
@@ -92,7 +93,9 @@ export class PiedraPapelTijeraComponent implements OnInit {
     this.resultado = this.juegoDelComponente.apostar(eleccionJugador);
     alert(this.resultado);
   }*/
-
+  AgregarPuntos() {
+    this.jugadorS.setPuntos2Sesion(this.puntaje);
+  }
   ngOnInit() {
   }
 

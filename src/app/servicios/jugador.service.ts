@@ -6,7 +6,7 @@ export class JugadorService {
 
   //jugador: Jugador = new Jugador();
 
-  constructor(private jugador:Jugador) { }
+  constructor(private jugador: Jugador) { }
 
   setId(id) {
     this.jugador.id = id;
@@ -27,19 +27,19 @@ export class JugadorService {
     this.jugador.puntos1base = puntos;
   }
   setPuntos1Sesion(puntos) {
-    this.jugador.puntos1sesion = puntos;
+    this.jugador.puntos1sesion = this.jugador.puntos1sesion + puntos;
   }
   setPuntos2Base(puntos) {
     this.jugador.puntos2base = puntos;
   }
   setPuntos2Sesion(puntos) {
-    this.jugador.puntos2sesion = puntos;
+    this.jugador.puntos2sesion = this.jugador.puntos2sesion + puntos;
   }
   setPuntos3Base(puntos) {
     this.jugador.puntos3base = puntos;
   }
   setPuntos3Sesion(puntos) {
-    this.jugador.puntos3sesion = puntos;
+    this.jugador.puntos3sesion = this.jugador.puntos3sesion + puntos;
   }
   /////////////////////////
   getId() {
