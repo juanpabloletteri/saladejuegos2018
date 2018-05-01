@@ -9,15 +9,15 @@ import { JuegoPPT } from '../../clases/jppt';
 export class PiedraPapelTijeraComponent implements OnInit {
 
   juegoDelComponente: JuegoPPT = new JuegoPPT();
-  eleccionJugador: number;
+
   resultado: string;
   constructor() {
     this.juegoDelComponente.generarEleccion();
   }
 
-  apostar() {
-    this.resultado = this.juegoDelComponente.apostar(this.eleccionJugador);
-    console.log(this.resultado);
+  apostar(eleccionJugador: number) {
+    this.resultado = this.juegoDelComponente.apostar(eleccionJugador);
+    alert(this.resultado);
   }
 
   ngOnInit() {
