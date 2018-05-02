@@ -12,14 +12,17 @@ import { JugadorService } from '../../servicios/jugador.service';
 export class LoginComponent implements OnInit {
 
   usuarios: any;
+
+  nombre: string;
+  apellido: string;
+  dni: string;
   mail: string;
-  pass: string;
-  //jugador: JugadorService = new JugadorService();
+  password: string;
 
   esUsuario: boolean = true;
 
-  constructor(public miHttp: HttpServiceService, public rute: Router, 
-    public nuevoHttp: Http, private jugador:JugadorService) {
+  constructor(public miHttp: HttpServiceService, public rute: Router,
+    public nuevoHttp: Http, private jugador: JugadorService) {
 
     this.miHttp.httpGetO('http://localhost/api/traerTodosLosUsuarios')
       .toPromise()
@@ -38,9 +41,9 @@ export class LoginComponent implements OnInit {
 
   Ingresar() {
     this.usuarios.forEach(element => {
-      console.log('mail' + this.mail + '  pass: ' + this.pass);
+      console.log('mail' + this.mail + '  password: ' + this.password);
       //console.log('ele mailll' + element.mail + 'ele apodo: ' + element.apodoJugador)
-      if (this.mail == element.mail && this.pass == element.password) {
+      if (this.mail == element.mail && this.password == element.password) {
         //alert("seeeeee");
         /*this.nuevoHttp.post('http://localhost/api/traerUsuarioPorId', '{ "id": 1 }')
           .subscribe(data => this.jugador = data.json());
@@ -58,10 +61,13 @@ export class LoginComponent implements OnInit {
         this.rute.navigate(['home']);
       } else if (this.mail == element.mail) {
         alert("password incorrecto")
-      } else if (this.pass == element.password) {
+      } else if (this.password == element.password) {
         alert("mail incorrecto")
       }
     });
+  }
+  Registrar() {
 
   }
+
 }
