@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { JugadorService } from '../../servicios/jugador.service';
-
+import { Http } from '@angular/http';
 @Component({
   selector: 'app-puntaje',
   templateUrl: './puntaje.component.html',
@@ -18,7 +18,7 @@ export class PuntajeComponent implements OnInit {
   puntos2Sesion: number;
   puntos3Sesion: number;
 
-  constructor(private jugadorS: JugadorService) {
+  constructor(private jugadorS: JugadorService, public mihttp: Http) {
   }
 
   ngOnInit() {
@@ -30,5 +30,15 @@ export class PuntajeComponent implements OnInit {
     this.puntos2Sesion = this.jugadorS.getPuntos2Sesion();
     this.puntos3Sesion = this.jugadorS.getPuntos3Sesion();
   }
+  SumarPuntos() {
+    var datos: any;
 
+    datos = { id: 5, puntos1: 11, puntos2: 22, puntos3: 33 }
+
+    this.mihttp.post('http://localhost/api/sumarPuntos', datos)
+      .subscribe(data => {
+        console.log(data);
+        return data;
+      })
+  }
 }
