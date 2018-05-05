@@ -1,64 +1,72 @@
-<p>
-  login works!
-</p>
-
-<h3>Es Usuario</h3>
-<p-inputSwitch onLabel="Si" offLabel="No" [(ngModel)]="esUsuario"></p-inputSwitch>
-
-<div *ngIf="esUsuario">
-  <h3>Mail</h3>
-  <span class="ui-float-label">
-    <input id="float-input" type="text" size="30" pInputText [(ngModel)]="mail">
-    <label for="float-input">Mail</label>
-  </span>
-
-  <h3>Password</h3>
-  <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon">
-      <i class="fa fa-user"></i>
-    </span>
-    <input type="password" pPassword [(ngModel)]="password" promptLabel="Ingresa pass" />
+<div class="fondo">
+  <div class="ui-g centrado">
+    <div class="ui-g-12 ui-md-6">
+      <h3>
+        Es Usuario</h3>
+      <p-inputSwitch onLabel="Si" offLabel="No" [(ngModel)]="esUsuario"></p-inputSwitch>
+    </div>
   </div>
 
-  <br>
-  <p-button (onClick)="Ingresar()" icon="fa fa-fw fa-check" label="Ingresar"></p-button>
-</div>
+  <div *ngIf="esUsuario" class="ui-g centrado">
+    <div class="ui-g-12 ui-md-6">
+      <h3>Mail</h3>
+      <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText [(ngModel)]="mail">
+        <label for="float-input">Mail</label>
+      </span>
 
+      <h3>Password</h3>
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-user"></i>
+        </span>
+        <input type="password" pPassword [(ngModel)]="password" promptLabel="Ingresa pass" />
+      </div>
 
-<div *ngIf="!esUsuario">
-
-  <h3>Nombre</h3>
-  <span class="ui-float-label">
-    <input id="float-input" type="text" size="30" pInputText [(ngModel)]="nombre">
-    <label for="float-input">Mail</label>
-  </span>
-
-  <h3>Apellido</h3>
-  <span class="ui-float-label">
-    <input id="float-input" type="text" size="30" pInputText [(ngModel)]="apellido">
-    <label for="float-input">Apellido</label>
-  </span>
-
-  <h3>DNI</h3>
-  <span class="ui-float-label">
-    <input id="float-input" type="text" size="30" pInputText [(ngModel)]="dni">
-    <label for="float-input">DNI</label>
-  </span>
-
-  <h3>Mail</h3>
-  <span class="ui-float-label">
-    <input id="float-input" type="text" size="30" pInputText [(ngModel)]="mail">
-    <label for="float-input">Mail</label>
-  </span>
-
-  <h3>Password</h3>
-  <div class="ui-inputgroup">
-    <span class="ui-inputgroup-addon">
-      <i class="fa fa-user"></i>
-    </span>
-    <input type="password" pPassword [(ngModel)]="password" promptLabel="Ingresa pass" />
+      <br>
+      <p-button (onClick)="Ingresar()" icon="fa fa-fw fa-check" label="Ingresar"></p-button>
+    </div>
   </div>
 
-  <br>
-  <p-button (onClick)="Registrar()" icon="fa fa-fw fa-check" label="Registrarse"></p-button>
+
+
+  <div *ngIf="!esUsuario" class="ui-g centrado">
+    <div class="ui-g-12 ui-md-6">
+
+      <h3>Nombre</h3>
+      <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText [(ngModel)]="nombre">
+        <label for="float-input">Mail</label>
+      </span>
+
+      <h3>Apellido</h3>
+      <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText [(ngModel)]="apellido">
+        <label for="float-input">Apellido</label>
+      </span>
+
+      <h3>DNI</h3>
+      <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText [(ngModel)]="dni">
+        <label for="float-input">DNI</label>
+      </span>
+
+      <h3>Mail</h3>
+      <span class="ui-float-label">
+        <input id="float-input" type="text" size="30" pInputText [(ngModel)]="mail">
+        <label for="float-input">Mail</label>
+      </span>
+
+      <h3>Password</h3>
+      <div class="ui-inputgroup">
+        <span class="ui-inputgroup-addon">
+          <i class="fa fa-user"></i>
+        </span>
+        <input type="password" pPassword [(ngModel)]="password" promptLabel="Ingresa pass" />
+      </div>
+
+      <br>
+      <p-button (onClick)="Registrar()" icon="fa fa-fw fa-check" label="Registrarse"></p-button>
+    </div>
+  </div>
 </div>

@@ -3,6 +3,7 @@ import { HttpServiceService } from '../../servicios/http-service.service';
 import { RouterModule, Route, Routes, Router } from '@angular/router';
 import { Http } from '@angular/http';
 import { JugadorService } from '../../servicios/jugador.service';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -58,6 +59,12 @@ export class LoginComponent implements OnInit {
         this.jugador.setPuntos2Base(element.puntos2);
         this.jugador.setPuntos3Base(element.puntos3);
         /////////////
+        swal(
+          'Acceso',
+          'Felicidades, Ingreso correcto',
+          'success'
+        )
+        //////////////
         this.rute.navigate(['home']);
       } else if (this.mail == element.mail) {
         alert("password incorrecto")

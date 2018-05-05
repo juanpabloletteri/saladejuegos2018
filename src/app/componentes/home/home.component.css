@@ -1,3 +1,9 @@
+
+.centrado{
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+}
 /* Add a black background color to the top navigation */
 .topnav {
     background-color: #333;

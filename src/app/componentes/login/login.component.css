@@ -1,0 +1,10 @@
+.fondo {
+    background-image: url("fondo.jpg");
+    background-color: #cccccc;
+ }
+
+.centrado{
+        margin: auto;
+        width: 50%;
+        padding: 10px;
+}

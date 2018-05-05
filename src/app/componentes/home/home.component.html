@@ -1,6 +1,10 @@
 <div class="topnav">
   <a class="active" routerLink="">Home</a>
-  <a class="topnav" routerLink="ppt">Piedra papel tijera</a>
+  <a class="topnav" routerLink="/adivina">Adivina el numero</a>
+  <a class="topnav" routerLink="/ppt">Piedra papel tijera</a>
+  <a class="topnav" routerLink="/juego3">Juego 3</a>
+  <a class="topnav" routerLink="/puntaje">Puntaje</a>
+  <a class="topnav" routerLink="/acercade">Acerca de</a>
   <div class="topnav-right">
     <a href="#" (click)="Salir()">Salir</a>
   </div>
@@ -13,8 +17,8 @@
       <div class="ui-grid-row">
         <div class="ui-grid-col-6">
           <br>
-          <h3> {{juego.nombre}} </h3>
-          <a routerLink="{{juego.link}}">
+        <!--  <h3> {{juego.nombre}} </h3>-->
+          <a class="centrado" routerLink="{{juego.link}}">
             <img src="../assets/juegos/{{juego.imagen}}.jpg" width="260" height="250">
           </a>
         </div>
