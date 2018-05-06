@@ -7,7 +7,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  logueado: boolean = true;
   juegos: Object[];
 
   constructor() {
@@ -18,10 +17,6 @@ export class HomeComponent implements OnInit {
       { nombre: 'Puntaje', imagen: 'puntaje', link: '/puntaje', color: 'Blue' },
       { nombre: 'Acerca de', imagen: 'acercade', link: '/acercade', color: 'Blue' }
     ];
-  }
-
-  Salir() {
-    this.logueado = false;
   }
 
   ngOnInit() {
