@@ -67,9 +67,9 @@ export class LoginComponent implements OnInit {
         //////////////
         this.rute.navigate(['home']);
       } else if (this.mail == element.mail) {
-        alert("password incorrecto")
+        swal('Password incorrecto', 'Reintente por favor', 'error')
       } else if (this.password == element.password) {
-        alert("mail incorrecto")
+        swal('Mail incorrecto', 'Reintente por favor', 'error')
       }
     });
   }
