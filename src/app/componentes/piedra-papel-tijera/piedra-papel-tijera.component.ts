@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { Message } from 'primeng/api';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { JugadorService } from '../../servicios/jugador.service';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'app-piedra-papel-tijera',
@@ -16,6 +17,17 @@ export class PiedraPapelTijeraComponent implements OnInit {
 
   eleccionMaquina: number = 0;
   //1 piedra 2 papel 3 tijeras
+  id: number;
+  apodoJugador: string;
+
+  puntos1Base: number;
+  puntos2Base: number;
+  puntos3Base: number;
+
+  puntos1Sesion: number;
+  puntos2Sesion: number;
+  puntos3Sesion: number;
+
   resultado: string;
   jugadas: number = 0;
   ganadas: number = 0;
@@ -23,9 +35,17 @@ export class PiedraPapelTijeraComponent implements OnInit {
   empatadas: number = 0;
   puntaje: number = 0;
 
-  constructor(private messageService: MessageService, private jugadorS: JugadorService) {
+  constructor(private messageService: MessageService, private jugadorS: JugadorService, private miHttp: Http) {
     //this.juegoDelComponente.generarEleccion();
     this.generarEleccion();
+    this.id = this.jugadorS.getId();
+    this.apodoJugador = this.jugadorS.getApodoJugador();
+    this.puntos1Base = this.jugadorS.getPuntos1Base();
+    this.puntos2Base = this.jugadorS.getPuntos2Base();
+    this.puntos3Base = this.jugadorS.getPuntos3Base();
+    this.puntos1Sesion = this.jugadorS.getPuntos1Sesion();
+    this.puntos2Sesion = this.jugadorS.getPuntos2Sesion();
+    this.puntos3Sesion = this.jugadorS.getPuntos3Sesion();
   }
 
   public apostar(eleccionJugador: number) {
@@ -58,7 +78,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
       this.msgs.push({ severity: 'info', summary: 'Empato', detail: 'No acumula puntaje' });
       this.empatadas++;
       this.generarEleccion();
-     // this.jugadorS.setPuntos2Sesion(this.puntaje);
+      // this.jugadorS.setPuntos2Sesion(this.puntaje);
       return 'empate';
     }
     else if (eleccionJugador == 1 && this.eleccionMaquina == 2 || eleccionJugador == 2 && this.eleccionMaquina == 3 || eleccionJugador == 3 && this.eleccionMaquina == 1) {
@@ -68,6 +88,8 @@ export class PiedraPapelTijeraComponent implements OnInit {
       this.puntaje--;
       this.generarEleccion();
       this.jugadorS.setPuntos2Sesion(-1);
+      this.puntos2Sesion=this.jugadorS.getPuntos2Sesion();
+      this.AgregarPuntos();
       return 'perdio';
     }
     else {
@@ -77,6 +99,11 @@ export class PiedraPapelTijeraComponent implements OnInit {
       this.puntaje++;
       this.generarEleccion();
       this.jugadorS.setPuntos2Sesion(1);
+      this.puntos2Sesion=this.jugadorS.getPuntos2Sesion();
+      console.log(this.puntos2Base);
+      console.log("-------");
+      console.log(this.puntos2Sesion);
+      this.AgregarPuntos();
       return 'gano';
     }
 
@@ -97,7 +124,17 @@ export class PiedraPapelTijeraComponent implements OnInit {
     alert(this.resultado);
   }*/
   AgregarPuntos() {
-    this.jugadorS.setPuntos2Sesion(this.puntaje);
+    var datos = {
+      id: this.id,
+      puntos1: (this.puntos1Base + this.puntos1Sesion),
+      puntos2: (this.puntos2Base + this.puntos2Sesion),
+      puntos3: (this.puntos3Base + this.puntos3Sesion)
+    }
+    this.miHttp.post('http://localhost/api/sumarPuntos', datos)
+    .toPromise()
+    .then(data=>{
+      console.log(data)
+    })
   }
   ngOnInit() {
   }
