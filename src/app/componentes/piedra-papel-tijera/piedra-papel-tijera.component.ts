@@ -58,6 +58,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
       this.msgs.push({ severity: 'info', summary: 'Empato', detail: 'No acumula puntaje' });
       this.empatadas++;
       this.generarEleccion();
+     // this.jugadorS.setPuntos2Sesion(this.puntaje);
       return 'empate';
     }
     else if (eleccionJugador == 1 && this.eleccionMaquina == 2 || eleccionJugador == 2 && this.eleccionMaquina == 3 || eleccionJugador == 3 && this.eleccionMaquina == 1) {
@@ -66,6 +67,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
       this.perdidas++;
       this.puntaje--;
       this.generarEleccion();
+      this.jugadorS.setPuntos2Sesion(-1);
       return 'perdio';
     }
     else {
@@ -74,6 +76,7 @@ export class PiedraPapelTijeraComponent implements OnInit {
       this.ganadas++;
       this.puntaje++;
       this.generarEleccion();
+      this.jugadorS.setPuntos2Sesion(1);
       return 'gano';
     }
 
