@@ -1,1 +1,319 @@
 <app-menu></app-menu>
+
+<body>
+
+
+    <div class="trivial chapeau efecto">
+        <h2>Todo el mundo ha visto alguna vez Los Simpson, la mayoría cientos de veces cada capítulo. Pero, ¿estás seguro de
+            que conoces bien todo lo que rodea a la famosa ciudad de Springfield y sus habitantes?</h2>
+        <p-button (onClick)="Enviar()" icon="fa fa-fw fa-check" label="Enviar Respuestas"></p-button>
+    </div>
+
+    <form method="post" id="cuestionario_form" name="cuestionario_form">
+        <div id="preguntas">
+            <div class="trivia bounceInLeft">
+                <h5>
+                    <span class="num">1</span>¿Quién disparó al Sr. Burns? {{preg1}} </h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516252.jpg" width="150" height="100" alt="Montgomery Burns">
+                </div>
+                <div class="t_options">
+                    <small>
+                        <input type="radio" id="136_respuesta_1" name="respuesta_1" [(ngModel)]="preg1" value='1'>
+                        <label for="136_respuesta_1">Maggie Simpson</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="136_respuesta_2" name="respuesta_1" [(ngModel)]="preg1" value='0'>
+                        <label for="136_respuesta_2">Smithers</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="136_respuesta_3" name="respuesta_1" [(ngModel)]="preg1" value="2">
+                        <label for="136_respuesta_3">Pequeño Ayudante de Santa Claus</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="136_respuesta_4" name="respuesta_1" [(ngModel)]="preg1" value="3">
+                        <label for="136_respuesta_4">Homer Simpson</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="136_respuesta_5" name="respuesta_1" [(ngModel)]="preg1" value="4">
+                        <label for="136_respuesta_5">Tito Puente</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia bounceInRight">
+                <h5>
+                    <span class="num">2</span>¿Cuál es el nombre completo de Homer? </h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516254.jpg" width="150" height="100" alt="Homer J. Simpson">
+                </div>
+                <div class="t_options ">
+                    <small>
+                        <input type="radio" id="137_respuesta_2" name="respuesta_2" [(ngModel)]="preg2" value="2">
+                        <label for="137_respuesta_2">Homer Jebediah Simpson</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="137_respuesta_3" name="respuesta_2" [(ngModel)]="preg2" value="1">
+                        <label for="137_respuesta_3">Homer Josh Simpson</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="137_respuesta_4" name="respuesta_2" [(ngModel)]="preg2" value="0">
+                        <label for="137_respuesta_4">Homer Jay Simpson</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="137_respuesta_5" name="respuesta_2" [(ngModel)]="preg2" value="3">
+                        <label for="137_respuesta_5">Homer Jeff Simpson</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="137_respuesta_6" name="respuesta_2" [(ngModel)]="preg2" value="4">
+                        <label for="137_respuesta_6">Homer Jake Simpson</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia bounceInLeft">
+                <h5>
+                    <span class="num">3</span>¿Qué sentidos tiene atrofiados Selma, la hermana de Marge?</h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516255.jpg" width="150" height="100" alt="Selma Bouvier">
+                </div>
+                <div class="t_options">
+                    <small>
+                        <input type="radio" id="138_respuesta_3" name="respuesta_3" [(ngModel)]="preg3" value="4">
+                        <label for="138_respuesta_3">El tacto y el olfato</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="138_respuesta_4" name="respuesta_3" [(ngModel)]="preg3" value="3">
+                        <label for="138_respuesta_4">El gusto y el tacto</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="138_respuesta_5" name="respuesta_3" [(ngModel)]="preg3" value="2">
+                        <label for="138_respuesta_5">El olfato y el oído</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="138_respuesta_6" name="respuesta_3" [(ngModel)]="preg3" value="0">
+                        <label for="138_respuesta_6">El gusto y el olfato</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="138_respuesta_7" name="respuesta_3" [(ngModel)]="preg3" value="1">
+                        <label for="138_respuesta_7">El gusto y el oído</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia bounceInRight">
+                <h5>
+                    <span class="num">4</span>¿De qué están hechas las barritas energéticas que toma Homero para escalar el pico más alto de
+                    Springfield?
+                </h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516257.jpg" width="150" height="100" alt="Imagen del capítulo &quot;El rey de la montaña&quot;">
+                </div>
+                <div class="t_options ">
+                    <small>
+                        <input type="radio" id="139_respuesta_4" name="respuesta_4" [(ngModel)]="preg4" value="4">
+                        <label for="139_respuesta_4">De chocolate y cartones usados</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="139_respuesta_5" name="respuesta_4" [(ngModel)]="preg4" value="3">
+                        <label for="139_respuesta_5">De trocitos de fruta y libros viejos de historia</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="139_respuesta_6" name="respuesta_4" [(ngModel)]="preg4" value="2">
+                        <label for="139_respuesta_6">De mondas de manzana y papel reciclado</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="139_respuesta_7" name="respuesta_4" [(ngModel)]="preg4" value="0">
+                        <label for="139_respuesta_7">De corazones de manzana y periódicos chinos</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="139_respuesta_8" name="respuesta_4" [(ngModel)]="preg4" value="1">
+                        <label for="139_respuesta_8">De chicles de menta y comida para perros</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia bounceInLeft">
+                <h5>
+                    <span class="num">5</span>¿Qué personaje dice la frase: "Las pequeñas cosas son las que hacen la vida"?</h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516258.jpg" width="150" height="100" alt="Actor secundario Mel">
+                </div>
+                <div class="t_options">
+                    <small>
+                        <input type="radio" id="140_respuesta_5" name="respuesta_5" [(ngModel)]="preg5" value="2">
+                        <label for="140_respuesta_5">El actor secundario Mel</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="140_respuesta_6" name="respuesta_5" [(ngModel)]="preg5" value="1">
+                        <label for="140_respuesta_6">La cantante de country Lurleen</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="140_respuesta_7" name="respuesta_5" [(ngModel)]="preg5" value="0">
+                        <label for="140_respuesta_7">El villano Hank Scorpio</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="140_respuesta_8" name="respuesta_5" [(ngModel)]="preg5" value="3">
+                        <label for="140_respuesta_8">La madre de Homer, Mona J. Simpson</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="140_respuesta_9" name="respuesta_5" [(ngModel)]="preg5" value="4">
+                        <label for="140_respuesta_9">El profesor Flink</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia bounceInRight">
+                <h5>
+                    <span class="num">6</span>¿Quiénes salvan de la quiebra a la productora de Rasca y Pica?</h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516259.jpg" width="150" height="100" alt="El Show de Rasca y Pica">
+                </div>
+                <div class="t_options">
+                    <small>
+                        <input type="radio" id="141_respuesta_6" name="respuesta_6" [(ngModel)]="preg6" value="4">
+                        <label for="141_respuesta_6">Chester y Liza</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="141_respuesta_7" name="respuesta_6" [(ngModel)]="preg6" value="3">
+                        <label for="141_respuesta_7">Bart y Milhouse</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="141_respuesta_8" name="respuesta_6" [(ngModel)]="preg6" value="2">
+                        <label for="141_respuesta_8">Bart y Lisa</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="141_respuesta_9" name="respuesta_6" [(ngModel)]="preg6" value="1">
+                        <label for="141_respuesta_9">Martin y Lisa</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="141_respuesta_10" name="respuesta_6" [(ngModel)]="preg" value="0">
+                        <label for="141_respuesta_10">Lester y Eliza</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia bounceInLeft">
+                <h5>
+                    <span class="num">7</span>¿Quien es el archienemigo de Bob Patiño?</h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516264.jpg" width="150" height="100" alt="¿Cómo se llama la mascota que diseñó Homer para las frustradas Olimpiadas de Springfield?">
+                </div>
+                <div class="t_options ">
+                    <small>
+                        <input type="radio" id="142_respuesta_7" name="respuesta_7" [(ngModel)]="preg7" value="4">
+                        <label for="142_respuesta_7">Bart</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="142_respuesta_8" name="respuesta_7" [(ngModel)]="preg7" value="3">
+                        <label for="142_respuesta_8">Lisa</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="142_respuesta_9" name="respuesta_7" [(ngModel)]="preg7" value="2">
+                        <label for="142_respuesta_9">Krusty el payaso</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="142_respuesta_10" name="respuesta_7" [(ngModel)]="preg7" value="0">
+                        <label for="142_respuesta_10">El rastrillo</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="142_respuesta_11" name="respuesta_7" [(ngModel)]="preg7" value="1">
+                        <label for="142_respuesta_11">Cecil Patiño</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia">
+                <h5>
+                    <span class="num">8</span>¿Qué foto gana el concurso para convertirse en la portada de la guía telefónica de Springfield?</h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/519259.jpg" width="150" height="100" alt="Perros jugando al póker">
+                </div>
+                <div class="t_options bounceInRight">
+                    <small>
+                        <input type="radio" id="143_respuesta_8" name="respuesta_8" [(ngModel)]="preg8" value="1">
+                        <label for="143_respuesta_8">Un grupo de perros jugando al póker</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="143_respuesta_9" name="respuesta_8" [(ngModel)]="preg8" value="0">
+                        <label for="143_respuesta_9">Bart y Lisa desnudos cuando eran bebés</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="143_respuesta_10" name="respuesta_8" [(ngModel)]="preg8" value="2">
+                        <label for="143_respuesta_10">El monte de Springfield en llamas</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="143_respuesta_11" name="respuesta_8" [(ngModel)]="preg8" value="3">
+                        <label for="143_respuesta_11">Un retrato del Sr. Burns</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="143_respuesta_12" name="respuesta_8" [(ngModel)]="preg8" value="4">
+                        <label for="143_respuesta_12">Maggie con la cabeza cubierta de espaguetis</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia">
+                <h5>
+                    <span class="num">9</span>¿Qué matrícula personalizada se agota en el parque temático Rascapiquilandia?</h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516260.jpg" width="150" height="100" alt="Uno de los robots de Rascapiquilandia">
+                </div>
+                <div class="t_options">
+                    <small>
+                        <input type="radio" id="144_respuesta_9" name="respuesta_9" [(ngModel)]="preg9" value="4">
+                        <label for="144_respuesta_9">Bart</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="144_respuesta_10" name="respuesta_9" [(ngModel)]="preg9" value="3">
+                        <label for="144_respuesta_10">Bert</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="144_respuesta_11" name="respuesta_9" [(ngModel)]="preg9" value="2">
+                        <label for="144_respuesta_11">Birt</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="144_respuesta_12" name="respuesta_9" [(ngModel)]="preg9" value="0">
+                        <label for="144_respuesta_12">Bort</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="144_respuesta_13" name="respuesta_9" [(ngModel)]="preg9" value="1">
+                        <label for="144_respuesta_13">Burt</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+            <div class="trivia">
+                <h5>
+                    <span class="num">10</span>¿De qué estado norteamericano es el disfraz que le hace Homer a Lisa?</h5>
+                <div class="img-quiz1">
+                    <img src="../../../assets/trivia/516261.jpg" width="150" height="100" alt="Lisa Simpson">
+                </div>
+                <div class="t_options bounceInRight">
+                    <small>
+                        <input type="radio" id="145_respuesta_10" name="respuesta_10" [(ngModel)]="preg10" value="4">
+                        <label for="145_respuesta_10">De Alabama</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="145_respuesta_11" name="respuesta_10" [(ngModel)]="preg10" value="3">
+                        <label for="145_respuesta_11">De California</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="145_respuesta_12" name="respuesta_10" [(ngModel)]="preg10" value="0">
+                        <label for="145_respuesta_12">De Florida</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="145_respuesta_13" name="respuesta_10" [(ngModel)]="preg10" value="1">
+                        <label for="145_respuesta_13">De Nevada</label>
+                    </small>
+                    <small>
+                        <input type="radio" id="145_respuesta_14" name="respuesta_10" [(ngModel)]="preg10" value="2">
+                        <label for="145_respuesta_14">De Wisconsin</label>
+                    </small>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </form>
+
+</body>

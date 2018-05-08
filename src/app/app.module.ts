@@ -41,7 +41,7 @@ const config: Routes = [
     component: PiedraPapelTijeraComponent
   },
   {
-    path: 'juego3',
+    path: 'trivia',
     component: Juego3Component
   },
   {
