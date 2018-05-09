@@ -16,8 +16,13 @@ export class LoginComponent implements OnInit {
 
   nombre: string;
   apellido: string;
-  dni: string;
   mail: string;
+  mail1:string;
+  dni: number = 0;
+  sexo: boolean = false;
+  apodoJugador: string;
+  pass1: string;
+  pass2: string;
   password: string;
 
   esUsuario: boolean = true;
@@ -73,8 +78,39 @@ export class LoginComponent implements OnInit {
       }
     });
   }
-  Registrar() {
 
+  Registrarse() {
+
+    if (this.pass1 == this.pass2) {
+      this.password = this.pass1;
+    }
+    else {
+      swal({
+        type: 'error',
+        title: 'Oops...',
+        text: 'Contraseñas no identicas!',
+      })
+    }
+    this.EscribirDatos()
+
+  }
+  EscribirDatos() {
+
+    var datos = {
+      nombre: this.nombre, apellido: this.apellido, dni: this.dni,
+      mail: this.mail1, sexo: this.sexo, apodoJugador: this.apodoJugador, password: this.password
+    }
+
+    this.nuevoHttp.post('http://apitplabo4.esy.es/altaUsuario', datos)
+      .toPromise()
+      .then(data => {
+        console.log(data);
+        swal(
+          'Felicidades!',
+          'Usuario creado exitosamente!',
+          'success'
+        )
+      })
   }
 
 }

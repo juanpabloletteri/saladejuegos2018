@@ -71,7 +71,8 @@
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-password">Contraseña</label>
-                    <input [(ngModel)]="password" type="password" name="form-password" placeholder="Contraseña..." class="form-password form-control" id="form-password">
+                    <input [(ngModel)]="password" type="password" name="form-password" placeholder="Contraseña..." class="form-password form-control"
+                      id="form-password">
                   </div>
                   <button type="submit" class="btn" (click)="Ingresar()">INGRESAR!</button>
                 </form>
@@ -114,29 +115,34 @@
                 <form role="form" action="" method="post" class="registration-form">
                   <div class="form-group">
                     <label class="sr-only" for="form-first-name">Nombre</label>
-                    <input type="text" name="form-first-name" placeholder="Nombre..." class="form-first-name form-control" id="form-first-name">
+                    <input [(ngModel)]="nombre" type="text" name="form-first-name" placeholder="Nombre..." class="form-first-name form-control"
+                      id="form-first-name">
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-last-name">Apellido</label>
-                    <input type="text" name="form-last-name" placeholder="Apellido..." class="form-last-name form-control" id="form-last-name">
+                    <input [(ngModel)]="apellido" type="text" name="form-last-name" placeholder="Apellido..." class="form-last-name form-control"
+                      id="form-last-name">
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-email">Email</label>
-                    <input type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
+                    <input [(ngModel)]="mail1" type="text" name="form-email" placeholder="Email..." class="form-email form-control" id="form-email">
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-last-name">Apodo Jugador</label>
-                    <input type="text" name="form-last-name" placeholder="Apodo Jugador..." class="form-last-name form-control" id="form-last-name1">
+                    <input [(ngModel)]="apodoJugador" type="text" name="form-last-name" placeholder="Apodo Jugador..." class="form-last-name form-control"
+                      id="form-last-name1">
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-password">Contraseña</label>
-                    <input type="password" name="form-password" placeholder="Contraseña..." class="form-password form-control" id="form-password1">
+                    <input [(ngModel)]="pass1" type="password" name="form-password" placeholder="Contraseña..." class="form-password form-control"
+                      id="form-password1">
                   </div>
                   <div class="form-group">
                     <label class="sr-only" for="form-password">Reingrese Contraseña</label>
-                    <input type="password" name="form-password" placeholder="Reingrese Contraseña..." class="form-password form-control" id="form-password2">
+                    <input [(ngModel)]="pass2" type="password" name="form-password" placeholder="Reingrese Contraseña..." class="form-password form-control"
+                      id="form-password2">
                   </div>
-                  <button type="submit" class="btn">REGISTRARME!</button>
+                  <button (click)="Registrarse()" type="submit" class="btn">REGISTRARME!</button>
                 </form>
               </div>
             </div>
