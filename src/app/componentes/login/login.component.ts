@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
   mail: string;
   mail1:string;
   dni: number = 0;
-  sexo: boolean = false;
+  sexo: number = 0;
   apodoJugador: string;
   pass1: string;
   pass2: string;
@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   constructor(public miHttp: HttpServiceService, public rute: Router,
     public nuevoHttp: Http, private jugador: JugadorService) {
 
-    this.miHttp.httpGetO('http://apitplabo4.esy.es/traerTodosLosUsuarios')
+    this.miHttp.httpGetO('http://saladejuegos.esy.es/api/traerTodosLosUsuarios')
       .toPromise()
       .then(data => {
         console.log(data);
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
       //console.log('ele mailll' + element.mail + 'ele apodo: ' + element.apodoJugador)
       if (this.mail == element.mail && this.password == element.password) {
         //alert("seeeeee");
-        /*this.nuevoHttp.post('http://apitplabo4.esy.es/traerUsuarioPorId', '{ "id": 1 }')
+        /*this.nuevoHttp.post('http://saladejuegos.esy.es/api/traerUsuarioPorId', '{ "id": 1 }')
           .subscribe(data => this.jugador = data.json());
         console.log('a verrrr:' + this.jugador)*/
         /////////////////////
@@ -101,7 +101,7 @@ export class LoginComponent implements OnInit {
       mail: this.mail1, sexo: this.sexo, apodoJugador: this.apodoJugador, password: this.password
     }
 
-    this.nuevoHttp.post('http://apitplabo4.esy.es/altaUsuario', datos)
+    this.nuevoHttp.post('http://saladejuegos.esy.es/api/altaUsuario', datos)
       .toPromise()
       .then(data => {
         console.log(data);

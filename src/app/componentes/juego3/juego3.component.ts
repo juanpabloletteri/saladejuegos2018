@@ -113,7 +113,7 @@ export class Juego3Component implements OnInit {
       puntos2: (this.puntos2Base + this.puntos2Sesion),
       puntos3: (this.puntos3Base + this.puntos3Sesion)
     }
-    this.miHttp.post('http://apitplabo4.esy.es/sumarPuntos', datos)
+    this.miHttp.post('http://saladejuegos.esy.es/api/sumarPuntos', datos)
       .toPromise()
       .then(data => {
         console.log(data)

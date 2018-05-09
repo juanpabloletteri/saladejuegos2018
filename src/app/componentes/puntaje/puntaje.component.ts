@@ -21,7 +21,7 @@ export class PuntajeComponent implements OnInit {
   jugadores: any;
 
   constructor(private jugadorS: JugadorService, public mihttp: Http) {
-    this.mihttp.get('http://apitplabo4.esy.es/traerTodosLosUsuarios')
+    this.mihttp.get('http://saladejuegos.esy.es/api/traerTodosLosUsuarios')
       .toPromise()
       .then(data => {
         this.jugadores = data.json();
@@ -43,7 +43,7 @@ export class PuntajeComponent implements OnInit {
 
     datos = { id: 5, puntos1: 11, puntos2: 22, puntos3: 33 }
 
-    this.mihttp.post('http://apitplabo4.esy.es/sumarPuntos', datos)
+    this.mihttp.post('http://saladejuegos.esy.es/api/sumarPuntos', datos)
       .subscribe(data => {
         console.log(data);
         return data;
