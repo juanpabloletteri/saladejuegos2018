@@ -2,7 +2,7 @@
 
 <table id="customers" class="tg rubberBand">
   <tr>
-  <h3>Resumen puntajes de {{apodoJugador}} </h3> 
+    <h3>Resumen puntajes de {{apodoJugador}} </h3>
   </tr>
   <tr>
     <th class="tg-yw4l">Juego</th>
@@ -28,4 +28,21 @@
     <td class="tg-yw4l">{{puntos2Base+puntos2Sesion}} </td>
     <td class="tg-yw4l">{{puntos3Base+puntos3Sesion}} </td>
   </tr>
+</table>
+
+<table id="customers" class="tg rubberBand">
+  <tr>
+    <h3>Rankig de jugadores </h3>
+  </tr>
+  <tr>
+    <th class="tg-yw4l">Apodo</th>
+    <th class="tg-yw4l">Adivina</th>
+    <th class="tg-yw4l">PPT</th>
+    <th class="tg-yw4l">Trivia Simpson</th>
+  </tr>
+  <tr *ngFor="let jugador of jugadores">
+    <td class="tg-yw4l"> {{jugador.apodoJugador}} </td>
+    <td class="tg-yw4l">{{jugador.puntos1}} </td>
+    <td class="tg-yw4l">{{jugador.puntos2}} </td>
+    <td class="tg-yw4l">{{jugador.puntos3}} </td>
 </table>

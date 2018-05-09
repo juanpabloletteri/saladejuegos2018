@@ -18,7 +18,15 @@ export class PuntajeComponent implements OnInit {
   puntos2Sesion: number;
   puntos3Sesion: number;
 
+  jugadores: any;
+
   constructor(private jugadorS: JugadorService, public mihttp: Http) {
+    this.mihttp.get('http://apitplabo4.esy.es/traerTodosLosUsuarios')
+      .toPromise()
+      .then(data => {
+        this.jugadores = data.json();
+        console.log(data);
+      })
   }
 
   ngOnInit() {
