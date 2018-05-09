@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
   constructor(public miHttp: HttpServiceService, public rute: Router,
     public nuevoHttp: Http, private jugador: JugadorService) {
 
-    this.miHttp.httpGetO('http://localhost/api/traerTodosLosUsuarios')
+    this.miHttp.httpGetO('http://apitplabo4.esy.es/traerTodosLosUsuarios')
       .toPromise()
       .then(data => {
         console.log(data);
@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
       //console.log('ele mailll' + element.mail + 'ele apodo: ' + element.apodoJugador)
       if (this.mail == element.mail && this.password == element.password) {
         //alert("seeeeee");
-        /*this.nuevoHttp.post('http://localhost/api/traerUsuarioPorId', '{ "id": 1 }')
+        /*this.nuevoHttp.post('http://apitplabo4.esy.es/traerUsuarioPorId', '{ "id": 1 }')
           .subscribe(data => this.jugador = data.json());
         console.log('a verrrr:' + this.jugador)*/
         /////////////////////

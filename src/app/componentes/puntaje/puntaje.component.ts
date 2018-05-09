@@ -35,7 +35,7 @@ export class PuntajeComponent implements OnInit {
 
     datos = { id: 5, puntos1: 11, puntos2: 22, puntos3: 33 }
 
-    this.mihttp.post('http://localhost/api/sumarPuntos', datos)
+    this.mihttp.post('http://apitplabo4.esy.es/sumarPuntos', datos)
       .subscribe(data => {
         console.log(data);
         return data;
