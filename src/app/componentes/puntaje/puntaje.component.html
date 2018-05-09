@@ -30,19 +30,22 @@
   </tr>
 </table>
 
-<table id="customers" class="tg rubberBand">
-  <tr>
-    <h3>Rankig de jugadores </h3>
-  </tr>
-  <tr>
-    <th class="tg-yw4l">Apodo</th>
-    <th class="tg-yw4l">Adivina</th>
-    <th class="tg-yw4l">PPT</th>
-    <th class="tg-yw4l">Trivia Simpson</th>
-  </tr>
-  <tr *ngFor="let jugador of jugadores">
-    <td class="tg-yw4l"> {{jugador.apodoJugador}} </td>
-    <td class="tg-yw4l">{{jugador.puntos1}} </td>
-    <td class="tg-yw4l">{{jugador.puntos2}} </td>
-    <td class="tg-yw4l">{{jugador.puntos3}} </td>
-</table>
+<h3 class="first">Rankig de jugadores</h3>
+<p-table [value]="cols">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Apodo</th>
+      <th>Adivina</th>
+      <th>Piedra Papel o Tijera</th>
+      <th>Trivia Simpson</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body">
+    <tr *ngFor="let jugador of jugadores">
+      <td>{{jugador.apodoJugador}}</td>
+      <td>{{jugador.puntos1}}</td>
+      <td>{{jugador.puntos2}}</td>
+      <td>{{jugador.puntos3}}</td>
+    </tr>
+  </ng-template>
+</p-table>

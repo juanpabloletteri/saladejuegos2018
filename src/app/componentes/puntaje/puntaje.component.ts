@@ -19,7 +19,8 @@ export class PuntajeComponent implements OnInit {
   puntos3Sesion: number;
 
   jugadores: any;
-
+  cols: any = [""];
+  
   constructor(private jugadorS: JugadorService, public mihttp: Http) {
     this.mihttp.get('http://saladejuegos.esy.es/api/traerTodosLosUsuarios')
       .toPromise()

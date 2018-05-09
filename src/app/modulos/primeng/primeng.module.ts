@@ -13,6 +13,8 @@ import { InputSwitchModule } from 'primeng/inputswitch';
 import { GrowlModule } from 'primeng/growl';
 import { Message } from 'primeng/api';
 import { MessageService } from 'primeng/components/common/messageservice';
+import { DataTableModule } from 'primeng/datatable';
+import { TableModule } from 'primeng/table';
 //////////////////
 @NgModule({
   imports: [
@@ -23,7 +25,9 @@ import { MessageService } from 'primeng/components/common/messageservice';
     ButtonModule,
     CarouselModule,
     InputSwitchModule,
-    GrowlModule
+    GrowlModule,
+    DataTableModule,
+    TableModule
   ],
   exports: [
     CommonModule,
@@ -33,7 +37,9 @@ import { MessageService } from 'primeng/components/common/messageservice';
     ButtonModule,
     CarouselModule,
     InputSwitchModule,
-    GrowlModule
+    GrowlModule,
+    DataTableModule,
+    TableModule
   ],
   providers: [
     MessageService
