@@ -15,6 +15,7 @@ import { Message } from 'primeng/api';
 import { MessageService } from 'primeng/components/common/messageservice';
 import { DataTableModule } from 'primeng/datatable';
 import { TableModule } from 'primeng/table';
+import { ChartModule } from 'primeng/chart';
 //////////////////
 @NgModule({
   imports: [
@@ -27,7 +28,8 @@ import { TableModule } from 'primeng/table';
     InputSwitchModule,
     GrowlModule,
     DataTableModule,
-    TableModule
+    TableModule,
+    ChartModule
   ],
   exports: [
     CommonModule,
@@ -39,7 +41,8 @@ import { TableModule } from 'primeng/table';
     InputSwitchModule,
     GrowlModule,
     DataTableModule,
-    TableModule
+    TableModule,
+    ChartModule
   ],
   providers: [
     MessageService

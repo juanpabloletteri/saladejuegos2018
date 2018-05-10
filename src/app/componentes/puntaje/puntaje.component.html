@@ -1,51 +1,67 @@
 <app-menu></app-menu>
 
-<table id="customers" class="tg rubberBand">
-  <tr>
-    <h3>Resumen puntajes de {{apodoJugador}} </h3>
-  </tr>
-  <tr>
-    <th class="tg-yw4l">Juego</th>
-    <th class="tg-yw4l">Adivina</th>
-    <th class="tg-yw4l">PPT</th>
-    <th class="tg-yw4l">Trivia Simpson</th>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Puntaje Base</td>
-    <td class="tg-yw4l"> {{puntos1Base}} </td>
-    <td class="tg-yw4l"> {{puntos2Base}} </td>
-    <td class="tg-yw4l"> {{puntos3Base}} </td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">Puntajes de hoy</td>
-    <td class="tg-yw4l"> {{puntos1Sesion}} </td>
-    <td class="tg-yw4l"> {{puntos2Sesion}} </td>
-    <td class="tg-yw4l"> {{puntos3Sesion}} </td>
-  </tr>
-  <tr>
-    <td class="tg-yw4l">TOTAL</td>
-    <td class="tg-yw4l"> {{puntos1Base+puntos1Sesion}} </td>
-    <td class="tg-yw4l">{{puntos2Base+puntos2Sesion}} </td>
-    <td class="tg-yw4l">{{puntos3Base+puntos3Sesion}} </td>
-  </tr>
-</table>
+<body>
 
-<h3 class="first">Rankig de jugadores</h3>
-<p-table [value]="cols">
-  <ng-template pTemplate="header">
+  <br>
+  <br>
+  <p-button (onClick)="GraficarRanking()" icon="fa fa-fw fa-check" label="Graficar Ranking"></p-button>
+  <p-button (onClick)="GraficarIndividual()" icon="fa fa-fw fa-check" label="Graficar Individual"></p-button>
+  <br>
+  <br>
+
+  <table id="customers" class="tg rubberBand">
     <tr>
-      <th>Apodo</th>
-      <th>Adivina</th>
-      <th>Piedra Papel o Tijera</th>
-      <th>Trivia Simpson</th>
+      <h3>Resumen puntajes de {{apodoJugador}} </h3>
     </tr>
-  </ng-template>
-  <ng-template pTemplate="body">
-    <tr *ngFor="let jugador of jugadores">
-      <td>{{jugador.apodoJugador}}</td>
-      <td>{{jugador.puntos1}}</td>
-      <td>{{jugador.puntos2}}</td>
-      <td>{{jugador.puntos3}}</td>
+    <tr>
+      <th class="tg-yw4l">Juego</th>
+      <th class="tg-yw4l">Adivina</th>
+      <th class="tg-yw4l">PPT</th>
+      <th class="tg-yw4l">Trivia Simpson</th>
     </tr>
-  </ng-template>
-</p-table>
+    <tr>
+      <td class="tg-yw4l">Puntaje Base</td>
+      <td class="tg-yw4l"> {{puntos1Base}} </td>
+      <td class="tg-yw4l"> {{puntos2Base}} </td>
+      <td class="tg-yw4l"> {{puntos3Base}} </td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">Puntajes de hoy</td>
+      <td class="tg-yw4l"> {{puntos1Sesion}} </td>
+      <td class="tg-yw4l"> {{puntos2Sesion}} </td>
+      <td class="tg-yw4l"> {{puntos3Sesion}} </td>
+    </tr>
+    <tr>
+      <td class="tg-yw4l">TOTAL</td>
+      <td class="tg-yw4l"> {{puntos1Base+puntos1Sesion}} </td>
+      <td class="tg-yw4l">{{puntos2Base+puntos2Sesion}} </td>
+      <td class="tg-yw4l">{{puntos3Base+puntos3Sesion}} </td>
+    </tr>
+  </table>
+
+  <h3 class="first">Rankig de jugadores</h3>
+  <p-table [value]="cols">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Apodo</th>
+        <th>Adivina</th>
+        <th>Piedra Papel o Tijera</th>
+        <th>Trivia Simpson</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body">
+      <tr *ngFor="let jugador of jugadores">
+        <td>{{jugador.apodoJugador}}</td>
+        <td>{{jugador.puntos1}}</td>
+        <td>{{jugador.puntos2}}</td>
+        <td>{{jugador.puntos3}}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+  <br>
+  <br>
+
+  <p-chart type="pie" [data]="data2"></p-chart>
+  <p-chart *ngIf="visibleRanking" type="bar" [data]="data"></p-chart>
+
+</body>

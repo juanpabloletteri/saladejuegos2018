@@ -26,6 +26,10 @@
     color: white;
 }
 
+body{
+    background-image: url('../../../assets/puntaje/bg.jpg')
+}
+
 .rubberBand {
     -webkit-animation-name: rubberBand;
     animation-name: rubberBand;
