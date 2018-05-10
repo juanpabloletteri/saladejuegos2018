@@ -94,19 +94,19 @@ export class PuntajeComponent implements OnInit {
           label: 'Adivina',
           backgroundColor: '#42a5f5',
           borderColor: '#1E88E5',
-          data: [11, 4, 45, 45, 11, 1, 4]
+          data: [11, 4, 45, 62, 11, 1, 4]
         },
         {
           label: 'Piedra Papel Tijera',
           backgroundColor: '#f5b942',
           borderColor: '#1E88E5',
-          data: [44, 12, 12, 18, 10, 6, -1]
+          data: [44, 12, 12, 19, 10, 6, -1]
         },
         {
           label: 'Trivia simpson',
           backgroundColor: '#4742f5',
           borderColor: '#1E88E5',
-          data: [54, 75, 38, 12, 7, 4]
+          data: [54, 7,5, 38, 12, 7, 4]
         }
       ]
     }

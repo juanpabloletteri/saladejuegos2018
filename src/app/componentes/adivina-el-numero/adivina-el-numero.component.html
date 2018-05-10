@@ -1,29 +1,40 @@
 <app-menu></app-menu>
 
-<form name="juego">
+<body>
+  <form>
+    <label for="float-input">
+      <h2>Ingrese numero:</h2>
+    </label>
+    <div class="ui-inputgroup">
+      <span class="ui-inputgroup-addon">
+        <i class="fa fa-question-circle"></i>
+      </span>
+      <input type="text" id=float-input pInputText placeholder="Ingrese numero aqui" [(ngModel)]="nuevoJuego.numeroIngresado" [ngModelOptions]="{standalone: true}">
+    </div>
+    <br>
 
-  <label>ingrese numero: </label>
-  <input [(ngModel)]="nuevoJuego.numeroIngresado" placeholder="ingrese numero" name="numeroIngresado" type="text" class="form-control"
-    style="width:50%" />
-  <h1>{{nuevoJuego.numeroIngresado}} </h1>
+    <h1>{{nuevoJuego.numeroIngresado}} </h1>
 
-  <h2 [hidden]="ocultarVerificar">
-    <button *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" class="btn btn-success btn-lg">Verificar</button>
-  </h2>
+    <h2 [hidden]="ocultarVerificar">
+      <p-button *ngIf="nuevoJuego.numeroSecreto!=0" (click)="verificar()" icon="fa fa-fw fa-check" label="Verificar"></p-button>
+    </h2>
 
-  <h2>
-    <button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()" class="btn btn-info btn-lg">Nuevo número secreto</button>
-  </h2>
+    <h2>
+      <p-button *ngIf="nuevoJuego.numeroSecreto==0 " (click)="generarnumero()" icon="fa fa-fw fa-check" label="Nuevo número secreto"></p-button>
+    </h2>
 
-  <h2>
-    <p *ngIf="nuevoJuego.numeroSecreto!=0">
-      <i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p>
-  </h2>
+    <h2>
+      <p *ngIf="nuevoJuego.numeroSecreto!=0">
+        <i class="fa fa-spinner fa-spin"></i>Esperando que ingrese un número</p>
+    </h2>
 
-  <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
-  <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
-
-
-</form>
-
-<div id="snackbar">{{Mensajes}}</div>
+    <h3 [hidden]="!nuevoJuego.gano">usted adivino el número</h3>
+    <h3 [hidden]="nuevoJuego.gano">usted aún no gano </h3>
+  </form>
+  <div id="snackbar">{{Mensajes}}</div>
+  <br>
+  <br>
+  <br>
+  <p-growl [(value)]="msgs"></p-growl>
+  <div class="fondo"><br><br><br><br><br><br><br><br><br><br><br><br><br><br></div>
+</body>
